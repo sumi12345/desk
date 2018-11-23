@@ -9,7 +9,7 @@
 <body>
 <div id="root" class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <h3>01 data binding v-model</h3>
             <div class="form-inline">
                 <input type="text" id="input" v-model="message" class="form-control">
@@ -20,6 +20,12 @@
             <ul>
                 <li v-for="name in names">{{ name }}</li>
             </ul>
+
+            <h3>04 event listeners v-on</h3>
+            <div class="form-inline">
+                <input type="text" v-model="newName" class="form-control">
+                <button v-on:click="addName" class="btn btn-primary">Add New Name</button>
+            </div>
         </div>
     </div>
 </div>
@@ -30,7 +36,14 @@
         data: {
             message: 'Hello World',
             names: ['Joe', 'Mary', 'Jane', 'Jack'],
+            newName: '',
         },
+        methods: {
+            addName() {
+                this.names.push(this.newName);
+                this.newName = '';
+            },
+        }
     })
 </script>
 </html>
