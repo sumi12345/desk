@@ -32,6 +32,9 @@
                 <button v-bind:title="title" class="btn btn-primary">title attribute binding</button>
                 <p :class="{'red': true}">class name will be red if the condition is set to true.</p>
             </div>
+
+            <h3>06 computed properties</h3>
+            <p>reversed message: {{ reversedMessage }}</p>
         </div>
     </div>
 </div>
@@ -50,6 +53,11 @@
                 this.names.push(this.newName);
                 this.newName = '';
             },
+        },
+        computed: {
+            reversedMessage() {
+                return this.message.split(' ').reverse().join(' ');
+            }
         }
     })
 </script>
