@@ -30,6 +30,7 @@
             <h3>05 attribute and class name binding (v-bind or :)</h3>
             <div class="form-inlin">
                 <button v-bind:title="title" class="btn btn-primary">title attribute binding</button>
+                <p :class="{'red': true}">class name will be red if the condition is set to true.</p>
             </div>
         </div>
     </div>
@@ -52,4 +53,7 @@
         }
     })
 </script>
+<style>
+    .red { color: firebrick; }
+</style>
 </html>
