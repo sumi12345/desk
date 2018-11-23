@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Learn vue 2 step by step</title>
+    <script src="libs/vue/vue.js"></script>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
 </head>
 <body>
-
+<div id="root" class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>01 data binding</h3>
+            <div class="form-inline">
+                <input type="text" id="input" v-model="message" class="form-control">
+                <p>The value of the input is: {{ message }}</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            message: 'Hello World',
+        },
+    })
+</script>
 </html>
