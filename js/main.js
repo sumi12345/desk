@@ -1,3 +1,21 @@
+// 14 named slots in a nutshell
+Vue.component('panel', {
+    template: `
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <slot name="header">default panel title</slot>
+  </div>
+  
+  <div class="panel-body">
+    <slot name="body">default panel content</slot>
+  </div>
+  
+  <div class="panel-footer">
+    <slot name="footer">default panel footer</slot>
+  </div>
+</div>`,
+});
+
 // 13 component communication example 2: event dispatcher
 window.Event = new Vue();
 
