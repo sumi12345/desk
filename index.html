@@ -51,6 +51,15 @@
             <h3>10 practical component exercise 2: modal</h3>
             <button @click="showModal = true" class="btn btn-primary">show modal</button>
             <modal v-if="showModal" @close="showModal = false" title="hello" body="I'm modal."></modal>
+
+            <h3>11 practical component exercise 3: tabs</h3>
+            <a href="https://gist.github.com/JeffreyWay/f844ca4dd1887d566759849665068162">see gist.github</a>
+
+            <h3>12 component communication example 1: custom events</h3>
+            <div class="form-inline">
+                <coupon v-on:apply="onCouponApply"></coupon>
+                <p v-if="couponApplied">You used a coupon!</p>
+            </div>
         </div>
     </div>
 </div>
@@ -64,12 +73,17 @@
             newName: '',
             title: 'now the title is being set through js',
             showModal: false,    // 10 practical component exercise 2: modal
+            couponApplied: false, // 12 component communication example 1: custom events
         },
         methods: {
             addName() {
                 this.names.push(this.newName);
                 this.newName = '';
             },
+
+            onCouponApply() {
+                this.couponApplied = true;
+            }
         },
         computed: {
             reversedMessage() {

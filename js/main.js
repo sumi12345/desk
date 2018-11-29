@@ -1,3 +1,14 @@
+// 12 component communication example 1: custom events
+Vue.component('coupon', {
+    template: `<input v-on:blur="onCouponApply" class="form-control"/>`,
+
+    methods: {
+        onCouponApply() {
+            this.$emit('apply');
+        }
+    }
+});
+
 // 10 practical component exercise 2: modal
 Vue.component('modal', {
     template: `
