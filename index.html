@@ -60,6 +60,11 @@
                 <coupon v-on:apply="onCouponApply"></coupon>
                 <p v-if="couponApplied">You used a coupon!</p>
             </div>
+
+            <h3>13 component communication example 2: event dispatcher</h3>
+            <div class="form-inline">
+                <coupon2></coupon2>
+            </div>
         </div>
     </div>
 </div>
@@ -74,6 +79,9 @@
             title: 'now the title is being set through js',
             showModal: false,    // 10 practical component exercise 2: modal
             couponApplied: false, // 12 component communication example 1: custom events
+        },
+        created() {
+            Event.$on('couponApply', () => alert('coupon applied!'));
         },
         methods: {
             addName() {

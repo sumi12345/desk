@@ -1,3 +1,16 @@
+// 13 component communication example 2: event dispatcher
+window.Event = new Vue();
+
+Vue.component('coupon2', {
+    template: `<input v-on:blur="onCouponApply" class="form-control"/>`,
+
+    methods: {
+        onCouponApply() {
+            Event.$emit('couponApply');
+        }
+    }
+});
+
 // 12 component communication example 1: custom events
 Vue.component('coupon', {
     template: `<input v-on:blur="onCouponApply" class="form-control"/>`,
