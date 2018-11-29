@@ -1,3 +1,17 @@
+// 15 inline template
+Vue.component('progress-view', {
+    data() {
+        return {
+            completionRate: 50
+        };
+    },
+    computed: {
+        progressStyle() {
+            return 'width: ' + this.completionRate + '%;';
+        }
+    }
+});
+
 // 14 named slots in a nutshell
 Vue.component('panel', {
     template: `
