@@ -1,3 +1,14 @@
+// 10 practical component exercise 2: modal
+Vue.component('modal', {
+    template: `
+    <div class="alert alert-warning">
+        <button @click="$emit('close')" class="close" data-dismiss="alert"><span>&times;</span></button>
+        <strong>{{ title }}</strong> {{ body }}
+    </div>`,
+
+    props: ['title', 'body'],
+});
+
 // 09 practical component exercise 1: message
 Vue.component('message', {
     template: `

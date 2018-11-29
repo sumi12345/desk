@@ -47,6 +47,10 @@
 
             <h3>09 practical component exercise 1: message</h3>
             <message title="hello" body="world"></message>
+
+            <h3>10 practical component exercise 2: modal</h3>
+            <button @click="showModal = true" class="btn btn-primary">show modal</button>
+            <modal v-if="showModal" @close="showModal = false" title="hello" body="I'm modal."></modal>
         </div>
     </div>
 </div>
@@ -59,6 +63,7 @@
             names: ['Joe', 'Mary', 'Jane', 'Jack'],
             newName: '',
             title: 'now the title is being set through js',
+            showModal: false,    // 10 practical component exercise 2: modal
         },
         methods: {
             addName() {
